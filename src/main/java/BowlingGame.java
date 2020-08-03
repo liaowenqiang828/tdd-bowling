@@ -14,7 +14,15 @@ public class BowlingGame {
                     totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow;
                 }
             } else {
-                totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow + tenFrames.get(index + 1).secondThrow;
+                if (tenFrames.get(index).throwTimes == 2) {
+                    totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow;
+                } else {
+                    if (tenFrames.get(index + 1).throwTimes == 1) {
+                        totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow + tenFrames.get(index + 2).firstThrow;
+                    } else {
+                        totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow + tenFrames.get(index + 1).secondThrow;
+                    }
+                }
             }
 
         }
