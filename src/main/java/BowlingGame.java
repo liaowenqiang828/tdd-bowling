@@ -9,6 +9,8 @@ public class BowlingGame {
         for (int index = 0; index < tenFrames.size(); index++) {
             if (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow < 10) {
                 totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow);
+            } else {
+                totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow;
             }
         }
         return totalScore;
