@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.swing.text.StyledEditorKit;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BowlingGameTest {
@@ -32,5 +34,26 @@ public class BowlingGameTest {
         int scoreOfOneFrame = bowlingGame.hitDownAllAfterTwoThrows(5);
 
         assertEquals(15, scoreOfOneFrame);
+    }
+
+    @Test
+    void should_return_() {
+        BowlingGame bowlingGame = new BowlingGame();
+
+        ArrayList<AFrame> tenFrames = new ArrayList<>();
+        tenFrames.add(new AFrame(1, 2));
+        tenFrames.add(new AFrame(3, 4));
+        tenFrames.add(new AFrame(5, 4));
+        tenFrames.add(new AFrame(4, 3));
+        tenFrames.add(new AFrame(3, 2));
+        tenFrames.add(new AFrame(2, 1));
+        tenFrames.add(new AFrame(3, 4));
+        tenFrames.add(new AFrame(4, 5));
+        tenFrames.add(new AFrame(3, 2));
+        tenFrames.add(new AFrame(5, 2));
+
+        int result = bowlingGame.finalScoreOfTenFrames(tenFrames);
+
+        assertEquals(62, result);
     }
 }
