@@ -13,4 +13,13 @@ public class BowlingGameTest {
         // Then
         assertEquals(5, scoreOfOneFrame);
     }
+
+    @Test
+    void should_return_ten_plus_the_total_number_of_next_two_throws_pins () {
+        BowlingGame bowlingGame = new BowlingGame();
+
+        int scoreOfOneFrame = bowlingGame.hitDownAllAtFirstThrow(2, 3);
+
+        assertEquals(15, scoreOfOneFrame);
+    }
 }
