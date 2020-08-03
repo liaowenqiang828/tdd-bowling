@@ -77,4 +77,25 @@ public class BowlingGameTest {
 
         assertEquals(66, result);
     }
+
+    @Test
+    void should_return_final_score_when_all_frames_did_not_hit_down_all_except_one_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+
+        ArrayList<AFrame> tenFrames = new ArrayList<>();
+        tenFrames.add(new AFrame(1, 2));
+        tenFrames.add(new AFrame(3, 4));
+        tenFrames.add(new AFrame(5, 4));
+        tenFrames.add(new AFrame(4, 3));
+        tenFrames.add(new AFrame(3, 2));
+        tenFrames.add(new AFrame(2, 1));
+        tenFrames.add(new AFrame(3, 4));
+        tenFrames.add(new AFrame(10, 0));
+        tenFrames.add(new AFrame(3, 2));
+        tenFrames.add(new AFrame(5, 2));
+
+        int result = bowlingGame.finalScoreOfTenFrames(tenFrames);
+
+        assertEquals(68, result);
+    }
 }

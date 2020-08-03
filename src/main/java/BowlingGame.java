@@ -7,11 +7,16 @@ public class BowlingGame {
         int totalScore = 0;
 
         for (int index = 0; index < tenFrames.size(); index++) {
-            if (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow < 10) {
-                totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow);
+            if (tenFrames.get(index).firstThrow < 10 && tenFrames.get(index).secondThrow < 10) {
+                if (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow < 10) {
+                    totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow);
+                } else {
+                    totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow;
+                }
             } else {
-                totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow;
+                totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow) + tenFrames.get(index + 1).firstThrow + tenFrames.get(index + 1).secondThrow;
             }
+
         }
         return totalScore;
     }
