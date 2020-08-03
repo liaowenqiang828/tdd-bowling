@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import javax.swing.text.StyledEditorKit;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BowlingGameTest {
@@ -19,6 +21,15 @@ public class BowlingGameTest {
         BowlingGame bowlingGame = new BowlingGame();
 
         int scoreOfOneFrame = bowlingGame.hitDownAllAtFirstThrow(2, 3);
+
+        assertEquals(15, scoreOfOneFrame);
+    }
+
+    @Test
+    void should_return_ten_plus_the_pin_of_next_one_throw () {
+        BowlingGame bowlingGame = new BowlingGame();
+
+        int scoreOfOneFrame = bowlingGame.hitDownAllAfterTwoThrows(5);
 
         assertEquals(15, scoreOfOneFrame);
     }
