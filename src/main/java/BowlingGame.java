@@ -14,7 +14,7 @@ public class BowlingGame {
         }
 
         for (int index = 0; index < length; index++) {
-            if (tenFrames.get(index).firstThrow < 10 && tenFrames.get(index).secondThrow < 10) {
+            if (tenFrames.get(index).firstThrow < 10 && tenFrames.get(index).secondThrow < 10) { // 1
                 if (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow < 10) {
                     totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow);
                 } else {
