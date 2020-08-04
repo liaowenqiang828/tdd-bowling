@@ -5,8 +5,15 @@ public class BowlingGame {
     ArrayList<AFrame> tenFrames = new ArrayList<>();
     public int finalScoreOfTenFrames (ArrayList<AFrame> tenFrames) {
         int totalScore = 0;
+        int length = 0;
 
-        for (int index = 0; index < tenFrames.size(); index++) {
+        if (tenFrames.size() > 10) {
+            length = 10;
+        } else {
+            length = tenFrames.size();
+        }
+
+        for (int index = 0; index < length; index++) {
             if (tenFrames.get(index).firstThrow < 10 && tenFrames.get(index).secondThrow < 10) {
                 if (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow < 10) {
                     totalScore += (tenFrames.get(index).firstThrow + tenFrames.get(index).secondThrow);
