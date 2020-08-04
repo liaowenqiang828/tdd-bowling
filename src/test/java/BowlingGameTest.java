@@ -142,4 +142,27 @@ public class BowlingGameTest {
 
         assertEquals(70, result);
     }
+
+//    @Test
+//    void should_return_final_score_when_all_frames_did_not_hit_down_all_except_tenth_frame_strike() {
+//        BowlingGame bowlingGame = new BowlingGame();
+//
+//        ArrayList<AFrame> tenFrames = new ArrayList<>();
+//        tenFrames.add(new AFrame(5, 5, 2));
+//        tenFrames.add(new AFrame(3, 4, 2));
+//        tenFrames.add(new AFrame(5, 4, 2));
+//        tenFrames.add(new AFrame(10, 0, 1));
+//        tenFrames.add(new AFrame(10, 0, 1));
+//        tenFrames.add(new AFrame(5, 5, 2));
+//        tenFrames.add(new AFrame(0, 10, 2));
+//        tenFrames.add(new AFrame(4, 6, 2));
+//        tenFrames.add(new AFrame(10, 0, 1));
+//        tenFrames.add(new AFrame(10, 0, 1));
+//
+//        tenFrames.add(new AFrame(3, 5, 2));
+//
+//        int result = bowlingGame.finalScoreOfTenFrames(tenFrames);
+//
+//        assertEquals(159, result);
+//    }
 }
